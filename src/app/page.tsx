@@ -6,7 +6,7 @@ import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 min-h-dvh text-white">
+    <main className="scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 min-h-dvh text-white overflow-x-hidden">
       <div className="flex flex-col min-h-dvh gap-60">
         <Navbar />
         <Hero />

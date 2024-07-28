@@ -36,7 +36,7 @@ const Project: React.FC<ProjectProps> = ({
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={` relative w-[45vw] h-[50vh] grid grid-cols-1 grid-rows-1 rounded-xl justify-center justify-items-center items-center overflow-hidden`}
+      className={` relative w-[45vw] h-[40vh] md:h-[50vh] grid grid-cols-1 grid-rows-1 rounded-xl justify-center justify-items-center items-center overflow-hidden min-w-[300px]  `}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       style={{ backgroundColor: color }}
