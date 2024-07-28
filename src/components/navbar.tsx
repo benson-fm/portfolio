@@ -9,6 +9,14 @@ const handleLowerPage = () => {
   });
 };
 
+const handleContact = () => {
+  window.scrollTo({
+    top: 2000,
+    behavior: "smooth",
+  });
+};
+
+
 export default function Navbar() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -25,10 +33,14 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleGithub = () => {
+    window.open("https://github.com/benson-fm/portfolio", "_blank");
+  };
+
   return (
     <nav className="flex w-full h-[40px] justify-center text-white ">
       <div className="flex flex-row w-3/4 justify-between pt-10 tracking-wide">
-        {isSmallScreen ? <a>@</a> : <a>@bensonfm</a>}
+        {isSmallScreen ? <a onClick={handleGithub}>@</a> : <a onClick={handleGithub}>@bensonfm</a>}
         <div className="flex space-x-10">
           <button
             className="hover:underline hover:underline-offset-8"
@@ -36,10 +48,7 @@ export default function Navbar() {
           >
             portfolio
           </button>
-          <button className="hover:underline hover:underline-offset-8">
-            experience
-          </button>
-          <button className="hover:underline hover:underline-offset-8">
+          <button className="hover:underline hover:underline-offset-8" onClick={handleContact}>
             contact
           </button>
         </div>

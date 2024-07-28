@@ -1,6 +1,8 @@
 "use client";
 
 import Project from "./project";
+import Petr from "../assets/petrCalednar.jpg";
+import Fusion from "../assets/fusion.svg";
 
 export default function Portfolio() {
   return (
@@ -8,22 +10,18 @@ export default function Portfolio() {
         <h1 className="text-6xl font-bold pt-24">Portfolio</h1>
         <div className="flex flex-col gap-10 pt-10">
           <Project
-            title="Project 1"
-            description="This is a description"
-            image="https://via.placeholder.com/150"
-            link="https://www.google.com"
+            title="PetrCalendar"
+            description="Streamlining online scheduling for UCI Petr Runs"
+            image={Petr}
+            link="https://github.com/benson-fm/PetrCalendar"
+            color="black"
           />
           <Project
-            title="Project 2"
-            description="This is a description"
-            image="https://via.placeholder.com/150"
-            link="https://www.google.com"
-          />
-          <Project
-            title="Project 3"
-            description="This is a description"
-            image="https://via.placeholder.com/150"
-            link="https://www.google.com"
+            title="FUSION Website"
+            description="The Official Website of Filipino Undergraduates in Science and Technology in an Organized Network (FUSION)" 
+            image={Fusion}
+            link="https://github.com/benson-fm/FUSION-Website"
+            color="white"
           />
         </div>
       </div>
