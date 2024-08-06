@@ -76,6 +76,9 @@ const config = {
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
       },
+      screens: {
+        '3xl': "1640px",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
