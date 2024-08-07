@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi2";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -29,11 +29,27 @@ const handleLowerPage = () => {
 };
 
 const Hero = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768); // You can set the width threshold as needed
+    };
+
+    handleResize(); // Set the initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   return (
     <Reveal>
       <div className="flex flex-col items-center justify-center text-white">
-        <h1 className="text-4xl md:text-7xl xl:text-9xl font-bold pb-5">
-          Benson Manzano
+        <h1 className="text-6xl md:text-7xl xl:text-9xl font-bold pb-5">
+          {isSmallScreen ? "Benson M": "Benson Manzano"}
         </h1>
         <h2 className="text-lg md:text-2xl pb-10">
           Fullstack Developer | CS @ UCI
