@@ -8,13 +8,15 @@ import React, { useRef } from 'react';
 import { Reveal } from "@/lib/Reveal";
 
 export default function Home() {
-  const portfolioRef = useRef(null);
+  const portfolioRef = useRef<HTMLDivElement>(null);
 
   const scrollToPortfolio = () => {
-    window.scrollTo({
-      top: portfolioRef.current.offsetTop,
-      behavior: 'smooth',
-    });
+    if (portfolioRef.current) {
+      window.scrollTo({
+        top: portfolioRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
