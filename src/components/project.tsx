@@ -41,7 +41,7 @@ const Project: React.FC<ProjectProps> = ({
       onMouseLeave={() => setIsHover(false)}
       style={{ backgroundColor: color }}
     >
-      <Image src={image} alt={title} className={`w-[300px] ${isHover ? 'blur-sm' : 'filter-none' }`} />
+      <Image src={image} alt={title} className={`w-[300px] ${isHover ? 'blur-sm' : 'filter-none' } ${title === "StockWise" ? 'w-[150px]' : 'w-[300px]' }`} />
       
       <motion.div
         animate={isHover ? "open" : "closed"}

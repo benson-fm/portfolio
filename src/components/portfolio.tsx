@@ -1,17 +1,30 @@
-"use client";
-
+import React, { forwardRef } from "react";
 import Project from "./project";
 import Petr from "../assets/petrCalednar.jpg";
 import Fusion from "../assets/fusion.svg";
+import stock from "../assets/stock_sentiment_logo.svg";
 import { Reveal } from "@/lib/Reveal";
 
-export default function Portfolio() {
+interface PortfolioProps {
+  // Define any additional props if needed
+}
+
+const Portfolio = forwardRef<HTMLDivElement, PortfolioProps>((props, ref) => {
   return (
-    <div className="flex flex-col items-center justify-center text-white">
+    <div ref={ref} className="flex flex-col items-center justify-center text-white">
       <Reveal>
         <h1 className="text-6xl font-bold pt-24">Portfolio</h1>
       </Reveal>
       <div className="flex flex-col gap-10 pt-10">
+        <Reveal>
+          <Project
+            title="StockWise"
+            description="AI-Driven sentiment analysis on stocks powered by Google Gemini"
+            image={stock}
+            link="https://github.com/benson-fm/stockwise/"
+            color="#111827"
+          />
+        </Reveal>
         <Reveal>
           <Project
             title="PetrCalendar"
@@ -33,4 +46,8 @@ export default function Portfolio() {
       </div>
     </div>
   );
-}
+});
+
+Portfolio.displayName = 'Portfolio';
+
+export default Portfolio;

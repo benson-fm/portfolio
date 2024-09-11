@@ -17,7 +17,7 @@ const handleLinkedIn = () => {
 
 const handleResume = () => {
   window.open(
-    "https://drive.google.com/file/d/1O8rngUofoRyGrXw2YxkAlAX3q9dfIY7a/view?usp=sharing"
+    "https://drive.google.com/file/d/1kwYjzCQ_DC3Z_Q2ItmRjNaoqBHgWKRhJ/view?usp=sharing"
   );
 };
 
@@ -28,7 +28,11 @@ const handleLowerPage = () => {
   });
 };
 
-const Hero = () => {
+interface HeroProps {
+  scrollToPortfolio: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ scrollToPortfolio }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -47,7 +51,7 @@ const Hero = () => {
 
   return (
     <Reveal>
-      <div className="flex flex-col items-center justify-center text-white">
+      <div className="flex flex-col items-center justify-center text-white max-h-dvh">
         <h1 className="text-6xl md:text-7xl xl:text-9xl font-bold pb-5">
           {isSmallScreen ? "Benson M": "Benson Manzano"}
         </h1>
@@ -70,7 +74,7 @@ const Hero = () => {
         </div>
         <HiChevronDown
           className="w-6 h-5 lg:w-10 lg:h-12 animate-bounce hover:cursor-pointer"
-          onClick={handleLowerPage}
+          onClick={scrollToPortfolio}
         />
       </div>
     </Reveal>
