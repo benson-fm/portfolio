@@ -17,7 +17,7 @@ const handleLinkedIn = () => {
 
 const handleResume = () => {
   window.open(
-    "https://drive.google.com/file/d/1kwYjzCQ_DC3Z_Q2ItmRjNaoqBHgWKRhJ/view?usp=sharing"
+    "https://drive.google.com/file/d/1OFU426gij7da5reaciw3G2iHu429aKdj/view?usp=sharing"
   );
 };
 
